@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:46:05 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Tue Feb 11 14:40:04 2025
+# Process ID: 7060
+# Current directory: C:/Users/230278M/Lab 1/Lab 1.runs/impl_1
+# Command line: vivado.exe -log Lab_1.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Lab_1.tcl -notrace
+# Log file: C:/Users/230278M/Lab 1/Lab 1.runs/impl_1/Lab_1.vdi
+# Journal file: C:/Users/230278M/Lab 1/Lab 1.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source Lab_1.tcl -notrace
