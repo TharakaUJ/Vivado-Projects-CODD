@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 02/25/2025 01:53:13 PM
+-- Create Date: 02/25/2025 02:56:39 PM
 -- Design Name: 
--- Module Name: TB_HA - Behavioral
+-- Module Name: TB_4_RCA - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,32 +31,51 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity TB_HA is
+entity TB_4_RCA is
 --  Port ( );
-end TB_HA;
+end TB_4_RCA;
 
-architecture Behavioral of TB_HA is
-COMPONENT HA
-    PORT( A,B : IN STD_LOGIC;
-          S, C  : OUT STD_LOGIC);
+architecture Behavioral of TB_4_RCA is
+COMPONENT RCA_4
+    PORT( A,B,C_in : IN STD_LOGIC;
+          S, C_out  : OUT STD_LOGIC);
 END COMPONENT;
 
-SIGNAL A, B : std_logic;
-SIGNAL S, C   : std_logic;
+SIGNAL A, B,C_in : std_logic;
+SIGNAL S, C_out   : std_logic;
 
 begin
-
-UUT: HA PORT MAP(
+UUT: FA PORT MAP(
         A => A,
         B => B,
+        C_in => C_in,
         S => S,
-        C => C
+        C_out => C_out
 );
 
 process
 begin
     A <= '0';
     B <= '0';
+    C_in <= '0';
+    
+    WAIT FOR 100ns;
+    
+    B <= '1';
+  
+    WAIT FOR 100ns;
+
+    A <= '1';
+    B <= '0'; 
+    
+    WAIT FOR 100ns;
+
+    B <= '1'; 
+    
+    WAIT FOR 100ns;
+    A <= '0';
+    B <= '0';
+    C_in <= '1';
     
     WAIT FOR 100ns;
     
@@ -73,6 +92,5 @@ begin
     
     WAIT;
 end process;
-
 
 end Behavioral;
