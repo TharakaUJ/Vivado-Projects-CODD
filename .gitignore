@@ -1,0 +1,17 @@
+# Ignore Vivado generated files
+*.jou
+*.log
+*.str
+*.bin
+*.rpt
+*.html
+*.xml
+*.backup
+*.wcfg
+*.wdb
+*.pb
+*.ltx
+*.xpr
+*.xsa
+*.xci
+*.xise
