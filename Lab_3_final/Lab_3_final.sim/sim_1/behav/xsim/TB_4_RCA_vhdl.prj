@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Lab_3_notFinished.srcs/sources_1/new/FA.vhd" \
+"../../../../Lab_3_notFinished.srcs/sources_1/new/HA.vhd" \
+"../../../../../../../Vivado-Projects-CODD-main/Vivado-Projects-CODD-main/lab3/Lab_3_notFinished/Lab_3_notFinished.srcs/sources_1/new/RCA_4.vhd" \
+"../../../../../../../Vivado-Projects-CODD-main/Vivado-Projects-CODD-main/lab3/Lab_3_notFinished/Lab_3_notFinished.srcs/sim_1/new/TB_4_RCA.vhd" \
+
+# Do not sort compile order
+nosort
