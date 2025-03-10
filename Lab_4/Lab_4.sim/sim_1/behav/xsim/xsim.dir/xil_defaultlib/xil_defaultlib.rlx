@@ -1,8 +1,10 @@
-0.6
-2019.2
-Oct 24 2019
-19:01:44
-C:/Users/230278M/Lab_4/Lab_4.srcs/sim_1/new/TB_Decoder_2_to_4.vhd,1741077511,vhdl,,,,tb_decoder_2_to_4,,,,,,,,
-C:/Users/230278M/Lab_4/Lab_4.srcs/sim_1/new/TB_Decoder_3_to_8.vhd,1741079979,vhdl,,,,tb_decoder_3_to_8,,,,,,,,
-C:/Users/230278M/Lab_4/Lab_4.srcs/sources_1/new/Decoder_2_to_4.vhd,1741076094,vhdl,,,,decoder_2_to_4,,,,,,,,
-C:/Users/230278M/Lab_4/Lab_4.srcs/sources_1/new/Decoder_3_to_8.vhd,1741079979,vhdl,,,,decoder_3_to_8,,,,,,,,
+0.7
+2020.2
+Nov  8 2024
+22:36:55
+/home/tharaka/Documents/Vivado-Projects-CODD/Lab_4/Lab_4.srcs/sim_1/new/TB_Decoder_2_to_4.vhd,1741077512,vhdl,,,,tb_decoder_2_to_4,,,,,,,,
+/home/tharaka/Documents/Vivado-Projects-CODD/Lab_4/Lab_4.srcs/sim_1/new/TB_Decoder_3_to_8.vhd,1741579809,vhdl,,,,tb_decoder_3_to_8,,,,,,,,
+/home/tharaka/Documents/Vivado-Projects-CODD/Lab_4/Lab_4.srcs/sim_1/new/TB_Mux_8_to_1.vhd,1741628458,vhdl,,,,tb_mux_8_to_1,,,,,,,,
+/home/tharaka/Documents/Vivado-Projects-CODD/Lab_4/Lab_4.srcs/sources_1/new/Decoder_2_to_4.vhd,1741624038,vhdl,,,,decoder_2_to_4,,,,,,,,
+/home/tharaka/Documents/Vivado-Projects-CODD/Lab_4/Lab_4.srcs/sources_1/new/Decoder_3_to_8.vhd,1741520783,vhdl,,,,decoder_3_to_8,,,,,,,,
+/home/tharaka/Documents/Vivado-Projects-CODD/Lab_4/Lab_4.srcs/sources_1/new/Mux_8_to_1.vhd,1741628576,vhdl,,,,mux_8_to_1,,,,,,,,

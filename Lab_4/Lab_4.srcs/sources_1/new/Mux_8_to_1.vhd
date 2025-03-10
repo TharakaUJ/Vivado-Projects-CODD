@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 03/04/2025 01:28:48 PM
+-- Create Date: 03/04/2025 02:15:55 PM
 -- Design Name: 
--- Module Name: Decoder_2_to_4 - Behavioral
+-- Module Name: Decoder_3_8 - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,18 +31,35 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Decoder_2_to_4 is
-    Port ( I : in STD_LOGIC_VECTOR (1 downto 0);
+entity Mux_8_to_1 is
+    Port ( S : in STD_LOGIC_VECTOR (2 downto 0);
+           D : in STD_LOGIC_VECTOR (7 downto 0);
            EN : in STD_LOGIC;
-           Y : out STD_LOGIC_VECTOR (3 downto 0));
-end Decoder_2_to_4;
+           Y : out STD_LOGIC);
+end Mux_8_to_1;
 
-architecture Behavioral of Decoder_2_to_4 is
+architecture Behavioral of Mux_8_to_1 is
+component Decoder_3_to_8
+    port(
+        I : in STD_LOGIC_VECTOR;
+        EN : in STD_LOGIC;
+        Y : out STD_LOGIC_VECTOR);
+end component;
+
+signal Y0, Y1 : STD_LOGIC_VECTOR (7 downto 0);
 
 begin
-Y(0) <= EN AND (NOT I(0) AND NOT I(1));
-Y(1) <= EN AND (I(0) AND NOT I(1));
-Y(2) <= EN AND (NOT I(0) AND I(1));
-Y(3) <= EN AND (I(0) AND I(1));
+Decoder_3_to_8_0: Decoder_3_to_8
+port map (
+    I => S,
+    EN => EN,
+    Y => Y0);
+
+Y1 <= Y0 and D;
+
+Y <= Y1(0) or Y1(1) or Y1(2) or Y1(3) or Y1(4) or Y1(5) or Y1(6) or Y1(7);
+
+
+
 
 end Behavioral;

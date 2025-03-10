@@ -36,7 +36,7 @@ entity TB_Decoder_3_to_8 is
 end TB_Decoder_3_to_8;
 
 architecture Behavioral of TB_Decoder_3_to_8 is
-COMPONENT DECODER_3_to_8
+COMPONENT Decoder_3_to_8
     Port ( I : in STD_LOGIC_VECTOR (2 downto 0);
            EN : in STD_LOGIC;
            Y : out STD_LOGIC_VECTOR (7 downto 0));
