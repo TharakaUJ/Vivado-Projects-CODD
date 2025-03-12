@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 03/11/2025 03:03:19 PM
+-- Create Date: 02/25/2025 02:36:19 PM
 -- Design Name: 
--- Module Name: TB_Multiplier_2 - Behavioral
+-- Module Name: FA - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,47 +31,43 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity TB_Multiplier_2 is
---  Port ( );
-end TB_Multiplier_2;
+entity FA is
+    Port ( A : in STD_LOGIC;
+           B : in STD_LOGIC;
+           C_in : in STD_LOGIC;
+           S : out STD_LOGIC;
+           C_out : out STD_LOGIC);
+end FA;
 
-architecture Behavioral of TB_Multiplier_2 is
-component Multiplier_2
-    port (
-        A : in std_logic_vector (1 downto 0);
-        B : in std_logic_vector (1 downto 0);
-        Y : out std_logic_vector (3 downto 0));
- end component;       
-     
-signal A : STD_LOGIC_VECTOR(1 downto 0);
-signal B : STD_LOGIC_VECTOR(1 downto 0);
-signal Y    : STD_LOGIC_VECTOR(3 downto 0); 
-   
+architecture Behavioral of FA is
+component HA
+port (
+a: in std_logic;
+b: in std_logic;
+s: out std_logic;
+c: out std_logic);
+end component;
+SIGNAL HA0_S, HA0_C, HA1_S, HA1_C : std_logic;
+
 begin
-UUT: Multiplier_2
-    port map(
+
+HA_0 : HA 
+    port map (
     A => A,
     B => B,
-    Y => Y);
+    S => HA0_S,
+    C => HA0_C);
     
- process
- begin
- A <= "01";
- B <= "11";
- 
- wait for 100ns;
- 
- A <= "00";
- B <= "01";
- 
- wait for 100ns;
- 
- A <= "11";
- B <= "11";
- 
- wait;
- 
- end process;
+HA_1 : HA 
+    port map (
+    A => HA0_S,
+    B => C_in,
+    S => HA1_S,
+    C => HA1_C);
+
+S <= HA1_S;
+C_out <= HA1_C or HA0_C;
+
 
 
 end Behavioral;

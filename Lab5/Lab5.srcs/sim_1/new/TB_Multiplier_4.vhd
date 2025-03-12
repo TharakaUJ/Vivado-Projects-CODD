@@ -31,47 +31,49 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity TB_Multiplier_2 is
+entity TB_Multiplier_4 is
 --  Port ( );
-end TB_Multiplier_2;
+end TB_Multiplier_4;
 
-architecture Behavioral of TB_Multiplier_2 is
-component Multiplier_2
+architecture Behavioral of TB_Multiplier_4 is
+component Multiplier_4
     port (
-        A : in std_logic_vector (1 downto 0);
-        B : in std_logic_vector (1 downto 0);
-        Y : out std_logic_vector (3 downto 0));
- end component;       
-     
-signal A : STD_LOGIC_VECTOR(1 downto 0);
-signal B : STD_LOGIC_VECTOR(1 downto 0);
-signal Y    : STD_LOGIC_VECTOR(3 downto 0); 
-   
-begin
-UUT: Multiplier_2
-    port map(
-    A => A,
-    B => B,
-    Y => Y);
-    
- process
- begin
- A <= "01";
- B <= "11";
- 
- wait for 100ns;
- 
- A <= "00";
- B <= "01";
- 
- wait for 100ns;
- 
- A <= "11";
- B <= "11";
- 
- wait;
- 
- end process;
+        A : in  STD_LOGIC_VECTOR (3 downto 0);
+        B : in  STD_LOGIC_VECTOR (3 downto 0);
+        Y : out STD_LOGIC_VECTOR (7 downto 0)
+    );
+end component;      
+  
+signal A : STD_LOGIC_VECTOR(3 downto 0);
+signal B : STD_LOGIC_VECTOR(3 downto 0);
+signal Y    : STD_LOGIC_VECTOR(7 downto 0); 
 
+     
+begin
+ UUT: Multiplier_4
+        port map (
+            A => A,
+            B => B,
+            Y => Y
+        );
+
+    process
+    begin
+        A <= "1110"; B <= "1111";
+        wait for 100 ns;
+
+        A <= "1011"; B <= "1111";
+        wait for 100 ns;
+
+        A <= "1100"; B <= "1111";
+        wait for 100 ns;
+
+        A <= "1101"; B <= "1111";
+        wait for 100 ns;
+
+        A <= "1111"; B <= "1111";
+        wait;
+    end process;
 
 end Behavioral;
+
