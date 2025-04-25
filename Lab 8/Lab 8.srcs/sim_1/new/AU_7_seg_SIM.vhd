@@ -33,8 +33,7 @@ architecture Behavioral of AU_7_seg_SIM is
             S_LED   : out STD_LOGIC_VECTOR (3 downto 0);
             S_7Seg  : out STD_LOGIC_VECTOR (6 downto 0);
             Carry   : out STD_LOGIC;
-            Zero    : out STD_LOGIC;
-            Anode   : out STD_LOGIC_VECTOR (3 downto 0)
+            Zero    : out STD_LOGIC
         );
     end component;
 
@@ -44,7 +43,6 @@ architecture Behavioral of AU_7_seg_SIM is
     signal Clk     : STD_LOGIC := '0';
     signal Zero    : STD_LOGIC;
     signal Carry   : STD_LOGIC;
-    signal Anode   : STD_LOGIC_VECTOR (3 downto 0);
     signal S_7Seg  : STD_LOGIC_VECTOR (6 downto 0);
 
 begin
@@ -57,8 +55,7 @@ begin
             S_LED   => S_LED,
             S_7Seg  => S_7Seg,
             Carry   => Carry,
-            Zero    => Zero,
-            Anode   => Anode
+            Zero    => Zero
         );
 
     -- Clock Generation
